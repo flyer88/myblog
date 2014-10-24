@@ -1,0 +1,37 @@
+*{margin:0 ;padding: 0 }
+
+body {
+  background-color: white;
+}
+
+.picture{
+
+}
+.container{
+	margin: 0,auto;	
+	background-color: white;
+}
+.container-article{
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+.linkscontainer{
+	text-align: center;
+}
+.title{
+	font-size: 30px;
+	color:#22b3b6;
+	text-align: center;
+
+}
+.content{
+	font-size: 20px;
+}
+.container-notice{
+	background-color: #333;
+	margin-bottom: 0px;
+	padding: 60px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px; 
+}
