@@ -1,7 +1,7 @@
 *{margin:0 ;padding: 0 }
 
 body {
-  background-color: white;
+ 
 }
 
 .picture{
@@ -10,6 +10,8 @@ body {
 .container{
 	margin: 0,auto;	
 	background-color: white;
+	text-align: center;
+
 }
 .container-article{
 	margin: 0 auto;
@@ -35,3 +37,30 @@ body {
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px; 
 }
+.login-container{
+	margin-left: 300px;
+}
+.input-group{
+	margin-top: 20px;
+	width: 300px;
+}
+.btn-default{
+	margin-top: 20px;
+}
+ .nav {
+ 	margin-left: 200px;
+ 	background-color: white;
+ 	border:1px #22b3b6 solid;
+ }
+ .admin-btn-fix{
+ 	float: right;
+ 	margin-left: 20px;
+ 	
+ }
+ .admin-btn-delete{
+ 	float: right;
+ 	margin-left: 20px;
+ }
+ .admin-title{
+ 	float: left;
+ }

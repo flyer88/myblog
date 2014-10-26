@@ -2,7 +2,7 @@
 @section('body')
 
 <div class="jumbotron" >
-  <h1 style="margin-left:150px">Update</h1>
+  <h1 style="margin-left:150px">Add</h1>
 </div>
 
  	

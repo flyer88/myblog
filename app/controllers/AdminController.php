@@ -12,7 +12,8 @@ class AdminController extends BaseController{
 
 		//echo $mail;
 		//var_dump($user['mail']);
-		if (Auth::attempt(array('mail' => $mail, 'password' => $password),true)){
+		if (Auth::attempt(array('mail' => $mail, 'password' => $password))){
+
     			return Redirect::to('admin');
 		}else{
 			echo "failed";
@@ -47,7 +48,7 @@ class AdminController extends BaseController{
 	public function articleContent($id){
 		//$id = $_GET['id'];
 
-		$articleContent = Article::where('Id','=',$id)->first();
+		$articleContent = Article::where('id','=',$id)->first();
 		//var_dump($articleContent);
 		return \View::make('admin.articleContent')->with('article',$articleContent);
 	}
@@ -74,12 +75,13 @@ class AdminController extends BaseController{
 	public function postDeleteArticle(){
 		$id = Input::get('id');
 		var_dump($id);
-		$article = Article::where('Id','=',$id )->first();
+		$article = Article::where('id','=',$id )->first();
 		//var_dump($article);
 		$article->delete();
 		return Redirect::back();
 	}
 	public function getAddArticle(){
+
 		return View::make('admin.articleAdd');
 
 	}
@@ -92,5 +94,9 @@ class AdminController extends BaseController{
 		$article->save();
 		return Redirect::to('admin');
 	}
+	public function logOut(){
+		Auth::logout();
+		return Redirect::to('/');
+	}	
 }
 ?>

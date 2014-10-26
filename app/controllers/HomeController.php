@@ -25,7 +25,7 @@ class HomeController extends BaseController {
 	{
 		//$id = $_GET['id'];
 
-		$articleContent = Article::where('Id','=',$id)->first();
+		$articleContent = Article::where('id','=',$id)->first();
 		//var_dump($articleContent);
 		return \View::make('home.articleContent')->with('article',$articleContent);
 	}
