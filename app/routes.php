@@ -14,15 +14,41 @@
 Route::get('/', array('as'=>'home','uses' => 'HomeController@index'));
 Route::get('boom',array('as'=>'boom','uses'=>'BoomController@index'));
 
-Route::get('/article/{id}',array('as'=>'home.article.id','uses'=>'HomeController@articleContent'));
+Route::get('/article/{id}',array('as'=>'article.id','uses'=>'HomeController@articleContent'));
 //Route::get('/article/{id}',array('uses'=>'HomeController@articleContent'));
 
-Route::get('admin/login',array('as'=>'login','uses'=>'LoginController@login'));
+//Route::get('/admin',array('as'=>'admin','uses'=>'AdminController@index'));
+
+Route::get('/admin/login',array('as'=>'admin.login','uses'=>'AdminController@login'));
+Route::post('/admin/login',array('as'=>'admin.login.check','uses'=>'AdminController@checkLogin'));
+
+Route::get('/admin/regist',array('as'=>'admin.regist','uses'=>'AdminController@regist'));
+Route::post('/admin/regist',array('as'=>'admin.regist','uses'=>'AdminController@registIn'));
 
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
-{
-    Route::any('/', 'App\Controllers\Admin\PagesController@index');
-    Route::resource('articles', 'App\Controllers\Admin\ArticlesController',array('only' =>array('index') ));
-    Route::resource('pages', 'App\Controllers\Admin\PagesController');
+Route::get('/article/{id}',array('as'=>'admin.article.id','uses'=>'AdminController@articleContent'));
+
+
+//Route::get('/admin/article/update/{id}',array('as'=>'admin.article.update.id','uses'=>'AdminController@getUpdateArticle'));
+//Route::get('/admin/article/add',array('as'=>'admin.article.add','uses'=>'AdminController@getAddArticle'));
+
+//Route::post('/admin/article/update',array('as'=>'admin.article.update','uses'=>'AdminController@postUpdateArticle'));
+//Route::post('/admin/article/add',array('as'=>'admin.article.add','uses'=>'AdminController@postAddArticle'));
+
+Route::post('/admin/article/delete',array('as'=>'admin.article.delete','uses'=>'AdminController@postDeleteArticle'));
+
+Route::group(array('prefix'=>'admin','before' => 'auth'),function(){
+	Route::any('/',array('as'=>'admin','uses'=>'AdminController@index'));
+	Route::get('/article/add',array('as'=>'admin.article.add','uses'=>'AdminController@getAddArticle'));
+	Route::get('/article/update/{id}',array('as'=>'admin.article.update.id','uses'=>'AdminController@getUpdateArticle'));
+	Route::post('/article/update',array('as'=>'admin.article.update','uses'=>'AdminController@postUpdateArticle'));
+	Route::post('/article/add',array('as'=>'admin.article.add','uses'=>'AdminController@postAddArticle'));
+	Route::post('/article/delete',array('as'=>'admin.article.delete','uses'=>'AdminController@postDeleteArticle'));
 });
+//Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
+//{
+//	Route::get('/admin',array('as'=>'admin','uses'=>'AdminController@index'));
+    //Route::any('/', 'App\Controllers\Admin\PagesController@index');
+    //Route::resource('articles', 'App\Controllers\Admin\ArticlesController',array('only' =>array('index') ));
+    //Route::resource('pages', 'App\Controllers\Admin\PagesController');
+//});

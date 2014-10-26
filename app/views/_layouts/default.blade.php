@@ -1,18 +1,20 @@
-<!doctype html>
+   <!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
 
-  <title>Learn Laravel 4</title>
-<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <title>flyer</title>
+<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+
+
+<link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('css/home-index.css') }}" rel="stylesheet">
   
 
 </head>
 <body>
-<div class="container">
 
-  @yield('main')
-
-</div>
+	@yield('body')
 </body>
 </html>

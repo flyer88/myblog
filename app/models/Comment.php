@@ -2,10 +2,10 @@
 /**
 * 
 */
-class Article extends \Eloquent
+class Comment extends \Eloquent
 {
 	protected $fillable = [];
-	protected $table = 'comment';
+	//protected $table = 'comment';
 	public $timestamps = false;
 	
 }

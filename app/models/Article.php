@@ -4,9 +4,11 @@
 */
 class Article extends \Eloquent
 {
+	use SoftDeletingTrait;
+
+
 	protected $fillable = [];
 	protected $table = 'article';
-	public $timestamps = false;
-	
+    	protected $dates = ['deleted_at'];
 }
 ?>
