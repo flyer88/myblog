@@ -1,4 +1,4 @@
-   <!doctype html>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
 
 <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ URL::asset('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('css/home-index.css') }}" rel="stylesheet">
+<link href="{{ URL::asset('css/mycss.css') }}" rel="stylesheet">
   
 
 </head>

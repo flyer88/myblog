@@ -17,9 +17,9 @@ class HomeController extends BaseController {
 	public function index()
 	{
 
-		$articles = Article::paginate(5);
+		$articles = Article::paginate(10);
 
-		return \View::make('home.index')->with('articles',$articles);
+		return \View::make('home.show')->with('articles',$articles);
 	}
 	public function articleContent($id)
 	{
@@ -28,5 +28,39 @@ class HomeController extends BaseController {
 		$articleContent = Article::where('id','=',$id)->first();
 		//var_dump($articleContent);
 		return \View::make('home.articleContent')->with('article',$articleContent);
+	}
+
+	public function selectArticle($name){
+		switch ($name) {
+			case 'php':
+				$articles = Article::where('flag','=','php')->paginate(2);
+				//var_dump($articles);
+				//echo $articles['flag'];
+				return View::make('boom.index');
+				break;
+
+			case 'laravel':
+				$articles = Article::where('flag','=','laravel')->first();
+				//return View::make('home.show')->with('articles',$articles);
+				break;
+
+			case 'java':
+				$articles = Article::where('flag','=','java')->first();
+				//return View::make('home.show')->with('articles',$articles);
+				return View::make('boom.index');
+				break;
+
+			case 'ubuntu':
+				$articles = Article::where('flag','=','ubuntu')->first();
+				//return View::make('home.show')->with('articles',$articles);
+				return View::make('boom.index');
+				break;	
+
+			default:
+				$articles = Article::paginate(10);
+				//return View::make('home.show')->with('articles',$articles);
+				return View::make('boom.index');
+				break;
+		}
 	}
 }

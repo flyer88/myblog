@@ -1,12 +1,26 @@
-@extends('_layouts.default')
-@section('body')
+@extends('_layouts.partials.row-col-md')
+                  @section('head')
+                  <div class="jumbotron">
+                  <h1>{{$article->title}}</h1>
+                  </div>
+                 @stop
 
-<div class="jumbotron" >
-  <h1 style="margin-left:150px">Content</h1>
-</div>
-	
-                                 <div class="title"> {{ $article->title}}</div>
-                                 <div > {{ $article->content}}</div>
-                                 <div>{{$article->updated_at}}</div>
-                                    
+
+                  @section('left')
+                    <div class="content">
+                          @include('md.content')
+                       </div>
+                    @stop
+
+                    @section('right')
+             
+                                   @include('_layouts.partials.admin-float-bar')
+                      @stop
+                     
+
+
+
+
+
 @stop
+

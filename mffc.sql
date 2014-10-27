@@ -21,6 +21,11 @@ alter table article  add  created_at datetime;
 alter table article  add  deleted_at datetime;
 alter table user add  remember_token text ;
 
+
+alter table article  add  flag varchar(64) not null;
+
+
+
 create table comment(
 id int not null auto_increment,
 title varchar(225) not null,
@@ -28,4 +33,3 @@ content longtext not null,
 primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-alter table article  add  flag varchar(64) not null;
