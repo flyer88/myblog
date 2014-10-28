@@ -17,7 +17,7 @@
 
 	@yield('body')
 	
-	 <div style="width:100%;height:50px;background-color:white;text-align:center">本站内容随意转载，但是注明转载地址  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.baidu.com" style="margin:0 auto;">友情链接：儿子</a></div>
+	 <div style="width:100%;height:50px;background-color:white;text-align:center">本站内容随意转载，但是注明转载地址  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.shyboy.me" style="margin:0 auto;">友情链接：儿子</a></div>
 </body>
 
 </html>

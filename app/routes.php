@@ -23,7 +23,7 @@ Route::get('/', array('as'=>'home','uses' => 'HomeController@index'));
 //分页路由
 Route::get('/article/{id}',array('as'=>'article.id','uses'=>'HomeController@articleContent'))->where('id','[0-9]+');
 Route::get('/article/type/{name}',array('as'=>'home.article.type.name','uses'=>'HomeController@selectArticle'))->where('name','[A-Za-z]+');
-
+Route::post('/article/comment',array('as'=>'article.comment','uses'=>'HomeController@addComment'));
 
 /**
 **admin使用

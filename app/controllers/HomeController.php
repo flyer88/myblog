@@ -26,8 +26,32 @@ class HomeController extends BaseController {
 		//$id = $_GET['id'];
 
 		$articleContent = Article::where('id','=',$id)->first();
+		$comments = Comment::where('aid','=',$id)->first();
+		return \View::make('home.articleContent')->with('article',$articleContent)->with('comment',$comments);
+
 		//var_dump($articleContent);
-		return \View::make('home.articleContent')->with('article',$articleContent);
+		//return \View::make('home.articleContent')->with('article',$articleContent)->with('comment',$comments);
+	}
+	public function addComment(){
+		$comment = new Comment();
+
+		$aid = Input::get('id');
+		var_dump($aid);
+		$name = Input::get('name');
+		//var_dump($name);
+		$title = Input::get('title');
+		//var_dump($title);
+		$content = Input::get('content');
+		//var_dump($content);
+
+		$comment['aid'] = $aid;
+		//var_dump($content['id']);
+		$comment['name']=$name;
+		$comment['title']=$title;
+		$comment['content']=$content; 
+		$comment->save();
+		return Redirect::back();
+
 	}
 
 	public function selectArticle($name){

@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <a href={{ route('boom') }} style="text-decoration:none"><h1 style="cursor:pointer">Hello, world!</h1><a/>
   <p>flyer</p>
-
+@include('_layouts.partials.home-head')
 </div>
 <div class="container">
 @stop
@@ -13,7 +13,7 @@
                        @foreach ($articles as $article)
                                  <div class="title"> <a href="{{ route('article.id',$article->id) }}">{{ $article->title}}</a></div>
                             <div class="content"> @include('md.content-sub')</div>
-                                <a href="{{ route('boom')}}"> ...>>see more</a>  
+                                <a href="{{ route('boom')}}" style="font-size:8px"> 1024</a>  
                                  <hr>                
                         @endforeach
                            <div  class="linkscontainer">
@@ -24,8 +24,8 @@
 
                     @section('right')
              
-                                   @include('_layouts.partials.home-float-bar')
+        
                      @stop
          
 </div>
-    
+            

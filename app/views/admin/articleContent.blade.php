@@ -2,6 +2,7 @@
                   @section('head')
                   <div class="jumbotron">
                   <h1>{{$article->title}}</h1>
+                  @include('_layouts.partials.admin-head')
                   </div>
                  @stop
 
@@ -14,7 +15,7 @@
 
                     @section('right')
              
-                                   @include('_layouts.partials.admin-float-bar')
+                                   
                       @stop
                      
 

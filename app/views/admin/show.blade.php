@@ -3,7 +3,7 @@
 <div class="jumbotron">
   <h1 >Admin</h1>
   <h2>articles</h2>
-  
+   @include('_layouts.partials.admin-head')
 </div>
 <div class="container">
 @stop
@@ -36,7 +36,7 @@
 
                     @section('right')
              
-                                   @include('_layouts.partials.admin-float-bar')
+                                  
                      @stop
                      
 
