@@ -1,9 +1,9 @@
 @extends('_layouts.partials.row-col-md')
 @section('head')
 <div class="jumbotron">
-  <h1>Hello, world!</h1>
-  <p>...</p>
-  <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+  <a href={{ route('boom') }} style="text-decoration:none"><h1 style="cursor:pointer">Hello, world!</h1><a/>
+  <p>flyer</p>
+
 </div>
 <div class="container">
 @stop
@@ -12,7 +12,7 @@
                      <div class="container-article">
                        @foreach ($articles as $article)
                                  <div class="title"> <a href="{{ route('article.id',$article->id) }}">{{ $article->title}}</a></div>
-                            <div class="content"> {{ substr($article->content, 0,200)}}</div>
+                            <div class="content"> @include('md.content-sub')</div>
                                 <a href="{{ route('boom')}}"> ...>>see more</a>  
                                  <hr>                
                         @endforeach
@@ -26,6 +26,6 @@
              
                                    @include('_layouts.partials.home-float-bar')
                      @stop
-                     
-
+         
 </div>
+    

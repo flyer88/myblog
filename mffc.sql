@@ -1,7 +1,12 @@
+create database mffc;
 create table article(
 id int not null auto_increment,
 title varchar(225) not null,
 content longtext not null,
+updated_at datetime,
+ created_at datetime,
+deleted_at datetime,
+ flag varchar(24)  not null,
 primary key (id)	
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -11,6 +16,7 @@ create table user(
 id int not null auto_increment,
 mail varchar(225) not null,
 password varchar(225) not null,
+remember_token 	text	,
 primary key (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

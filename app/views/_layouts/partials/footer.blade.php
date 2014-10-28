@@ -1,0 +1,1 @@
+<div style="width:100%;hight:50px;background-color:black">本站内容随意转载，但是注明转载地址</div>

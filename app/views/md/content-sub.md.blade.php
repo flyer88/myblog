@@ -1,0 +1,1 @@
+ {{ substr($article->content, 0,200)}}
