@@ -34,8 +34,15 @@ alter table article  add  flag varchar(64) not null;
 
 create table comment(
 id int not null auto_increment,
+name  varchar(225) DEFAULT '匿名用户',
+aid int not null,
 title varchar(225) not null,
 content longtext not null,
+
+updated_at datetime,
+created_at datetime,
+deleted_at datetime,
 primary key(id)
+
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
