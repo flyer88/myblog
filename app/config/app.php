@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => 'true',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,7 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'GrahamCampbell\Markdown\MarkdownServiceProvider',
-		'Krucas\Notification\NotificationServiceProvider',
+		//'Krucas\Notification\NotificationServiceProvider',
 
 	),
 
@@ -191,7 +191,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
-		'Notification' => 'Krucas\Notification\Facades\Notification',
+		//'Notification' => 'Krucas\Notification\Facades\Notification',
 
 	),
 

@@ -31,4 +31,8 @@
 								</nav>
 								<!-- END MAIN NAVIGATION -->
 							</div>	
+							 	<div class="container" style="float:right"　>
+		<div class="readmore-button">
+	<a href="{{ route('admin.article.add') }}" class="btn22 btn-1 btn-1c" style="margin:0 atuo">添加文章</a>
+	</div>
 						</div>	

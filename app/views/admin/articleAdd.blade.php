@@ -15,7 +15,7 @@
  	 <div class="container">
 	<textarea name="content" class="form-control admin-form-content" placeholder="文章内容"></textarea></br>
 	</div>
-	<input type="submit"  class="btn btn-primary admin-btn-add" value="发表">
+	<input type="submit"  class="btn btn-primary admin-btn-add" style="margin-left:86px" value="发表">
 	{{ Form::close() }}
 
 

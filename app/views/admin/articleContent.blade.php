@@ -1,7 +1,7 @@
 @extends('_layouts.default')
 @section('body')
       <div style="margin-top:50px">
-        @include('_layouts.partials.head-bar')
+        @include('admin.head-bar')
       </div>
        <div>
          @include('_layouts.partials.content')

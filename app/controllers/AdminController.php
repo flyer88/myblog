@@ -155,18 +155,18 @@ class AdminController extends BaseController{
 				break;
 
 			case 'laravel':
-				$articles = Article::where('flag','=','laravel')->first();
-				return View::make('admin.index')->with('articles',$articles);
+				$articles = Article::where('flag','=','laravel')->paginate(2);
+				return View::make('admin.show')->with('articles',$articles);
 				break;
 
 			case 'java':
-				$articles = Article::where('flag','=','java')->first();
-				return View::make('admin.index')->with('articles',$articles);
+				$articles = Article::where('flag','=','java')->paginate(2);
+				return View::make('admin.show')->with('articles',$articles);
 				break;
 
 			case 'ubuntu':
-				$articles = Article::where('flag','=','ubuntu')->first();
-				return View::make('admin.index')->with('articles',$articles);
+				$articles = Article::where('flag','=','ubuntu')->paginate(2);
+				return View::make('admin.show')->with('articles',$articles);
 				break;	
 
 			default:
