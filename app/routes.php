@@ -32,8 +32,8 @@ Route::post('/article/comment',array('as'=>'article.comment','uses'=>'HomeContro
 Route::get('/admin/login',array('as'=>'admin.login','uses'=>'AdminController@login'));
 Route::post('/admin/login',array('as'=>'admin.login.check','uses'=>'AdminController@checkLogin'));
 //admin注册路由
-Route::get('/admin/regist',array('as'=>'admin.regist','uses'=>'AdminController@regist'));
-Route::post('/admin/regist',array('as'=>'admin.regist','uses'=>'AdminController@registIn'));
+//Route::get('/admin/regist',array('as'=>'admin.regist','uses'=>'AdminController@regist'));
+//Route::post('/admin/regist',array('as'=>'admin.regist','uses'=>'AdminController@registIn'));
 
 
 //登陆后处理

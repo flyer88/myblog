@@ -18,7 +18,7 @@ class HomeController extends BaseController {
 	{
 
 		$articles = Article::paginate(10);
-
+		//echo "hello";
 		return \View::make('home.show')->with('articles',$articles);
 	}
 	public function articleContent($id)
@@ -57,34 +57,36 @@ class HomeController extends BaseController {
 	public function selectArticle($name){
 		switch ($name) {
 			case 'php':
-				$articles = Article::where('flag','=','php')->paginate(2);
+				$articles = Article::where('flag','=','php')->paginate(5);
 				//var_dump($articles);
 				//echo $articles['flag'];
-				return View::make('boom.index');
+				return View::make('home.show')->with('articles',$articles);
 				break;
 
 			case 'laravel':
-				$articles = Article::where('flag','=','laravel')->first();
-				//return View::make('home.show')->with('articles',$articles);
+				$articles = Article::where('flag','=','laravel')->paginate(5);
+				return View::make('home.show')->with('articles',$articles);
 				break;
 
 			case 'java':
-				$articles = Article::where('flag','=','java')->first();
-				//return View::make('home.show')->with('articles',$articles);
-				return View::make('boom.index');
+				$articles = Article::where('flag','=','java')->paginate(5);
+				return View::make('home.show')->with('articles',$articles);
+
 				break;
 
 			case 'ubuntu':
-				$articles = Article::where('flag','=','ubuntu')->first();
-				//return View::make('home.show')->with('articles',$articles);
-				return View::make('boom.index');
+				$articles = Article::where('flag','=','ubuntu')->paginate(5);
+				return View::make('home.show')->with('articles',$articles);
+
+				break;	
+			case 'life':
+				$articles = Article::where('flag','=','life')->paginate(5);
+				return View::make('home.show')->with('articles',$articles);
 				break;	
 
 			default:
 				$articles = Article::paginate(10);
-				//return View::make('home.show')->with('articles',$articles);
-				return View::make('boom.index');
-				break;
+				return View::make('home.show')->with('articles',$articles);
 		}
 	}
 }

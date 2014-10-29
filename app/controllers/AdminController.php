@@ -14,18 +14,23 @@ class AdminController extends BaseController{
 	}
 
 	public function checkLogin(){
-		$mail = Input::get('mail');
-		$password = Input::get('password');
-		$user = User::find(1);
+		$data = Input::all();
+		//$user = User::find(1);
+		$rules =[
+		"mail" => "required|exists:user,mail"
+		];
+		$validator = Validator::make($data,$rules);
+
+		if ($validator->fails()) {
+			return Redirect::to('admin/regist')->withErrors($validator);
+		}elseif (Auth::attempt(array('mail' => $data['mail'], 'password' => $data['password']))){
+			return Redirect::to('admin');
+		}else{
+			return Redirect::to('admin/login')->with('error',"密码错误！！");
+		}
 
 		//echo $mail;
 		//var_dump($user['mail']);
-		if (Auth::attempt(array('mail' => $mail, 'password' => $password))){
-
-    			return Redirect::to('admin');
-		}else{
-			echo "failed";
-		}
 	}
 	public function isLogin(){
 
@@ -38,15 +43,25 @@ class AdminController extends BaseController{
 		return View::make('admin.regist');
 	}
 	public function registIn(){
-		$user  =  new User;
+		// $user  =  new User;
 
-		$mail = Input::get('mail');
-		$password = Hash::make(Input::get('password'));
+		// $mail = Input::get('mail');
+		// $password = Hash::make(Input::get('password'));
 
-		$user->mail=$mail;
-		$user->password=$password;
-		$user->save();
-		return Redirect::to('boom');
+		
+		$data = Input::all();
+		$rules  = ['mail'=>'required|email|unique:user,mail','password'=>'required|between:6,60'];
+		$messages = ['unique'=>':attribute has been used'];
+		$validator = Validator::make($data,$rules,$messages);
+		if ($validator->fails()) {
+			return Redirect::to('admin/regist')->withErrors($validator);
+		}else {
+			$user->mail=$mail;
+			$user->password=$password;
+			$user->save();
+			return Redirect::route('admin.login');
+		}
+		//return Redirect::to('boom');
 	}
 	//登出
 	public function logOut(){
@@ -141,17 +156,17 @@ class AdminController extends BaseController{
 
 			case 'laravel':
 				$articles = Article::where('flag','=','laravel')->first();
-				//return View::make('admin.index')->with('articles',$articles);
+				return View::make('admin.index')->with('articles',$articles);
 				break;
 
 			case 'java':
 				$articles = Article::where('flag','=','java')->first();
-				//return View::make('admin.index')->with('articles',$articles);
+				return View::make('admin.index')->with('articles',$articles);
 				break;
 
 			case 'ubuntu':
 				$articles = Article::where('flag','=','ubuntu')->first();
-				//return View::make('admin.index')->with('articles',$articles);
+				return View::make('admin.index')->with('articles',$articles);
 				break;	
 
 			default:

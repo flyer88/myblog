@@ -12,7 +12,7 @@
 	<textarea name="content" class="form-control  form">{{$article->content}}</textarea></br>
 	
 	</div>
-	<input type="submit"  class="btn btn-primary admin-btn-add">
+	<input type="submit"  class="btn btn-primary admin-btn-add" style="margin-left:87px">
 	{{ Form::close() }}
 
                                      

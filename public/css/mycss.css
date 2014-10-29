@@ -1,76 +1,24 @@
-*{margin:0 ;padding: 0 }
-
-body {
- 
-}
-
-
-.container{
-	margin: 0,auto;	
-	background-color: white;
-	text-align: center;
-
-}
-.container-article{
+/*登陆界面的按钮组*/
+.login-container{
 	margin: 0 auto;
-	padding: 20px;
-	border-radius: 5px;
+	margin-top: 60px;
+	text-align: center;
+	width: 300px;
 }
+.input-group{
+	margin-top: 30px;
+}
+.btn-default{
+	margin-top: 30px;
+}
+
+
+
+
 .linkscontainer{
 	text-align: center;
 }
 .title{
-	font-size: 30px;
-	color:#22b3b6;
-	text-align: center;
-
+	text-decoration: none;
+	color: #428bca;
 }
-
-.container-notice{
-	background-color: #333;
-	margin-bottom: 0px;
-	padding: 60px;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px; 
-}
-.login-container{
-	margin-left: 300px;
-}
-.input-group{
-	margin-top: 20px;
-	width: 300px;
-}
-.btn-default{
-	margin-top: 20px;
-}
- .nav {
- 	margin-left: 200px;
- 	background-color: white;
- 	border:1px #22b3b6 solid;
- }
- .admin-btn-fix{
- 	float: right;
- 	margin-left: 20px;
- 	
- }
- .admin-btn-delete{
- 	float: right;
- 	margin-left: 20px;
- }
- .admin-btn-add{
- 	margin-left: 87px;
- }
- .admin-title{
- 	float: left;
- }
-
- .form-control{
- 	margin: 0 , auto;
- 	width: 500px;
- }
- .content{
- 	font-size: 12px;
- 	margin-left: 40px;
- 	margin-right: 40px;
- 	
- }
