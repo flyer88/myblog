@@ -4,3 +4,27 @@
   font-weight: 400;
   src: local('Qwigley'), local('Qwigley-Regular'), url(http://fonts.gstatic.com/s/qwigley/v6/7kYx3NMo0QlNvVUFn_G-mg.woff) format('woff');
 }
+/*登陆界面的按钮组*/
+.login-container{
+	margin: 0 auto;
+	margin-top: 60px;
+	text-align: center;
+	width: 300px;
+}
+.input-group{
+	margin-top: 30px;
+}
+.btn-default{
+	margin-top: 30px;
+}
+
+
+
+
+.linkscontainer{
+	text-align: center;
+}
+.title{
+	text-decoration: none;
+	color: #428bca;
+}
