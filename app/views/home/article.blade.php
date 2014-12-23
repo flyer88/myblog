@@ -8,7 +8,7 @@
 		<div class="span1">
 			<div class="post_date">
 				<div class="post_date">
-					<span>03</span>2014 Jan
+					<span>{{date("Y")}}</span>
 				</div>
 			</div>
 		</div>
@@ -29,9 +29,6 @@
 				<div class="excerpt">			
 					 {{ substr($article->content, 0,200)}}
 				</div>
-				<div class="readmore-button">
-					<a href="" class="btn22 btn-1 btn-1c" style="text-decoration:none">Continue Reading...</a>
-				</div>	
 				<div class="clear"></div>
 			</div>
 		</div>	
